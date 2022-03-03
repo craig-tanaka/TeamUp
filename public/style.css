@@ -30,7 +30,9 @@ nav{
     display: flex;
     justify-content: space-between;
     align-items: center;
-
+}
+.site-logo{
+    width: 7rem;
 }
 #nav-links{
     list-style: none;
