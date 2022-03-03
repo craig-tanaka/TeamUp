@@ -60,10 +60,17 @@ h2{
 }
 
 #home-search{
-    padding: .75rem;
+    padding: .5rem .75rem;
     width: 21.5rem;
     border-radius: 15px;
     border-width: 1px;
+    font-family: 'Raleway',
+    sans-serif;
+}
+
+/* Styles the header of the why-section */
+#why-teamup--section h2{
+    margin-bottom: 3rem;
 }
 
 /* The class is for the container element of all 3 cards */
@@ -95,6 +102,7 @@ h2{
 .why-section-card:nth-child(1){
     background-image: url("./img/why-section-card-1.jpg");
     background-color: rgba(240, 248, 255, 0.713);
+    margin-left: 4rem;
 }
 .why-section-card:nth-child(2){
     background-image: url("./img/why-section-card-2.jpg");
