@@ -6,6 +6,13 @@ body{
     font-family: 'Raleway',
     sans-serif;
 }
+body.index-page{
+    background-image: url("./img/home-banner.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+    color: white;
+    text-align: center;
+}
 
 
 /* ______________Navigation styling */
@@ -24,7 +31,6 @@ nav{
     justify-content: space-between;
     align-items: center;
 
-    color: white;
 }
 #nav-links{
     list-style: none;
@@ -44,8 +50,6 @@ nav{
 /* _____________ Home Page Styling*/
 
 #home-banner{
-    background-image: url("./img/home-banner.jpg");
-    background-size: contain;
     color: white;
     text-align: center;
     padding: 45vh 0;
@@ -62,5 +66,60 @@ h2{
     border-width: 1px;
 }
 
+/* The class is for the container element of all 3 cards */
+#why-section-cards{
+    display: flex;
+    flex-wrap: nowrap;
+    overflow: hidden;
+}
+
+.why-section-card{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-basis: 50%;
+    flex-shrink: 0;
+    
+    border-radius: 10px;
+    padding: 8rem 0.6rem;
+    margin: 0 2rem;
+
+    font-size: 1.2rem;
+    font-weight: 700;
+    background-size: contain;
+    
+    /* uses a box shadow to create a color overlay on the background image */
+    box-shadow: inset 0 0 0 2000px rgb(110 110 110 / 54%);
+}
+
+.why-section-card:nth-child(1){
+    background-image: url("./img/why-section-card-1.jpg");
+    background-color: rgba(240, 248, 255, 0.713);
+}
+.why-section-card:nth-child(2){
+    background-image: url("./img/why-section-card-2.jpg");
+}
+.why-section-card:nth-child(3){
+    background-image: url("./img/why-section-card-3.jpg");
+}
+
+/* this style only applies to buttons in the Why TeamUp Section */
+.why-section-card button{
+    color: white;
+    font-weight: 700;
+    font-size: 2rem;
+
+    /* Removes the default background color and and border that usually comes with html buttons */
+    background-color: transparent;
+    border: none;
+
+    /* transforms the mouse pointer into a hand whenever the user hovers their mouse obver the button */
+    cursor: pointer;
+}
+
+/* This style applies to the text in the why-section-cards */
+.why-section-card p{
+    margin: 0 1.5rem;
+}
 /* _____________ Home Page Styling*/
 
