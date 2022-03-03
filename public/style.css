@@ -121,5 +121,12 @@ h2{
 .why-section-card p{
     margin: 0 1.5rem;
 }
+
+
+footer{
+    background: orangered;
+    padding: 0.5rem;
+    margin-top: 4rem;
+}
 /* _____________ Home Page Styling*/
 
