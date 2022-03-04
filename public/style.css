@@ -154,4 +154,52 @@ footer{
 
     /* color: white; */
 }
+
+.page-main-body{
+    display: flex;
+    background-color: #e3e1e1;
+}
+
+.side-section{
+    background-color: white;
+    margin-right: 1rem;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    margin-top: 1px;
+    margin-block-end: 1px;
+}
+.main-section{
+    display: flex;
+    flex-wrap: wrap;
+    padding-top: .75rem;
+}
+
+.player-card{
+    background-color: white;
+    margin-right: 1rem;
+    margin-bottom: 1rem;
+    padding-bottom: .5rem;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    cursor: pointer;
+}
+
+.player-card-img{
+    width: 8rem;
+    height: 3rem;
+    /* the line ensures that the image does loose its aspect ratio since we've set both a width and height on the image */
+    object-fit: cover; 
+    border-bottom-left-radius: 7px;
+    border-bottom-right-radius: 7px;
+}
+
+/* targets the header/name in the player card */
+.player-card h4{
+    margin-top: 0;
+    margin-bottom: 0;
+}
+/* And this targets the rest of the text in the player card */
+.player-card p{
+    margin: 0;
+}
 /* _____________ Pllayers n Team Page Styling*/
