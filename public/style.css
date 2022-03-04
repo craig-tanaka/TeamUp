@@ -211,6 +211,48 @@ ul.page-numbers{
     margin-top: 1px;
     margin-block-end: 1px;
 }
+
+.search-selection-criteria{
+    margin: 1rem;
+}
+.search-selection-criteria .header{
+    background-color: #bfbfbf;
+    border-bottom: 1px solid rgb(61, 61, 61);
+    border-radius: 3px;
+    padding: .5rem;
+}
+.search-selection-criteria .body{
+    background-color: #e2e2e2;
+    padding-top: .5rem;
+    border-radius: 3px;
+    padding-left: .5rem;
+    border: 1px solid #bfbfbf;
+}
+.search-selection-criteria h4{
+    margin: 0;
+    flex-grow: 1;
+}
+.search-selection-criteria > span, 
+.search-selection-criteria .selection-option{
+    display: flex;
+    align-items: center;
+}
+.search-selection-criteria .selection-option{
+    padding-bottom: .5rem;
+}
+.search-selection-criteria p{
+    margin: 0;
+    flex-grow: 1;
+}
+
+.search-selection-criteria .selection-option .check{
+    opacity: 0;
+}
+.search-selection-criteria .selection-option.active .check{
+    opacity: 1;
+}
+
+
 .main-section{
     display: flex;
     flex-wrap: wrap;
