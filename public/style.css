@@ -53,6 +53,9 @@ nav{
     margin-right: 2.5rem;
     font-weight: 300;
 }
+.nav-link.active{
+    color: #ef3845;
+}
 /* _____________Navigation styling */
 
 
