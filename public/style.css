@@ -155,7 +155,7 @@ footer{
 
 
 /* _____________ Pllayers n Team Page Styling*/
-.players-page nav{
+.players-page nav, .teams-page nav{
     color: white;
 }
 .page-header{
@@ -319,7 +319,7 @@ ul.page-numbers{
     margin: 0;
 }
 
-.players-page footer{
+.players-page footer, .teams-page footer{
     margin-top: 0rem;
 }
 /* _____________ Pllayers n Team Page Styling*/
