@@ -134,7 +134,8 @@ h2{
 
 
 footer{
-    background: orangered;
+    background: #ef3845;
+    color: white;
     padding: 0.5rem;
     margin-top: 4rem;
 }
