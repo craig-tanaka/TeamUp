@@ -5,13 +5,13 @@ body{
     margin: 0;
     font-family: 'Raleway',
     sans-serif;
+    text-align: center;
 }
 body.index-page{
     background-image: url("./img/home-banner.jpg");
     background-size: cover;
     background-attachment: fixed;
     color: white;
-    text-align: center;
 }
 
 
@@ -134,10 +134,24 @@ h2{
 
 
 footer{
-    text-align: center;
     background: orangered;
     padding: 0.5rem;
     margin-top: 4rem;
 }
 /* _____________ Home Page Styling*/
 
+
+
+/* _____________ Pllayers n Team Page Styling*/
+.page-header{
+    margin-top: 0;
+    padding-top: 8rem;
+    padding-bottom: 3rem;
+
+    background-image: url("./img/why-section-card-3.jpg");
+    background-size: cover;
+    box-shadow: inset 0 0 0 2000px rgba(255, 255, 255, 0.620);
+
+    /* color: white; */
+}
+/* _____________ Pllayers n Team Page Styling*/
