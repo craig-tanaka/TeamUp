@@ -297,6 +297,7 @@ ul.page-numbers{
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
     cursor: pointer;
+    height: max-content;
 }
 
 .player-card-img{
