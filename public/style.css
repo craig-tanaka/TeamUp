@@ -1,5 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;700&display=swap');
 
+/* remove all default styling on links */
+ a,
+ a:hover,
+ a:focus,
+ a:active {
+     text-decoration: none;
+     color: inherit;
+ }
 
 body{
     margin: 0;
