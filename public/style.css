@@ -350,7 +350,6 @@ ul.page-numbers{
     border-radius: 7px;
 }
 
-
 .forums-page footer{
     /* Since the content on the page is not a lot this ensures that the footer is always at the bottom */
     position: absolute;
@@ -359,3 +358,60 @@ ul.page-numbers{
     right: 0;
 }
 /* _____________ Forums Page Styling*/
+
+/* _____________ Create Forums Page Styling*/
+.create-forum-input-label,
+.create-forum-input,
+#forum-type-select,
+#create-forum-submit{
+    /* this again everything on the craete forums page is in its own line */
+    display: block;
+}
+
+.create-forum-input-label{
+    margin-top: 2rem;
+    font-weight: 700;
+    font-size: 18px;
+}
+
+.create-forum-input{
+    font-family: 'Raleway',
+    sans-serif;
+    background-color: #bfbfbf;
+    border: none;
+    outline-width: 1px;
+    outline-color: #ef3845;
+    padding: .5rem;
+    border-radius: 10px;
+    width: 40%;
+    margin: auto;
+    margin-top: .5rem;
+}
+#forum-type-select{
+    width: 20rem;
+    margin: auto;
+    margin-top: .5rem;
+    padding: 1rem;
+    background-color: #bfbfbf;
+    outline-color: #ef3845;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+.forum-type-select-option{
+    padding: 1rem;
+}
+#create-forum-submit{
+    width: max-content;
+    margin: auto;
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+    background-color: #ef3845;
+    color: white;
+    padding: .75rem 2rem;
+    border: none;
+    border-radius: 10px;
+}
+.create-forums-page footer{
+    margin-top: 0;
+}
+/* _____________ Create Forums Page Styling*/
