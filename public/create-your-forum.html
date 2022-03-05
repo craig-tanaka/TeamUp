@@ -28,7 +28,7 @@
     <script defer src="/__/firebase/init.js?useEmulator=true"></script>
 </head>
 
-<body class="forums-page">
+<body class="create-forums-page">
     <nav>
         <h1>
             <a href="./index.html">
@@ -56,14 +56,14 @@
             <label for="topic-description" class="create-forum-input-label">Describe Your Topic</label>
             <textarea name="topic-description"  class="create-forum-input" id="forum-description-input" cols="30" rows="10"></textarea>
             
-            <label for="topic-type" class="create-forum-input-label">Describe Your Topic</label>
+            <label for="topic-type" class="create-forum-input-label">Type of Topic</label>
             <select name="topic-type" id="forum-type-select">
                 <option value="" class="forum-type-select-option" disabled></option>
-                <option value="Physical" class="forum-type-select-option" disabled>Physical</option>
-                <option value="Digital" class="forum-type-select-option" disabled>Digital</option>
+                <option value="Physical" class="forum-type-select-option">Physical</option>
+                <option value="Digital" class="forum-type-select-option">Digital</option>
             </select>
 
-            <input type="submit" value="Submit">
+            <input type="submit" value="Submit" id="create-forum-submit">
 
         </div>
 
