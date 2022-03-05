@@ -415,3 +415,29 @@ ul.page-numbers{
     margin-top: 0;
 }
 /* _____________ Create Forums Page Styling*/
+
+/* _____________ Forums-Topics-View Page Styling*/
+.forums-topic-page .forums-topic-title{
+    margin-bottom: 2rem;
+    margin-top: 3rem;
+}
+.forums-topic-row{
+    display: flex;
+    background-color: #bfbfbf;
+    padding: .5rem;
+    width: 50%;
+    box-sizing: border-box;
+    margin: auto;
+    margin-top: 1.51rem;
+    border-radius: 2px;
+    cursor: pointer;
+}
+.forums-topic-letter{
+    margin: 0;
+}
+.forums-topic-topic{
+    flex: 1;
+    text-align: center;
+    margin: 0;
+}
+/* _____________ Forums-Topics-View Page Styling*/
