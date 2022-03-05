@@ -323,3 +323,39 @@ ul.page-numbers{
     margin-top: 0rem;
 }
 /* _____________ Pllayers n Team Page Styling*/
+
+/* _____________ Forums Page Styling*/
+.forums-topic-title{
+    background-color: #ef3845;
+    color: white;
+    width: 60%;
+    margin: auto;
+    margin-top: 5rem;
+    padding-top: .5rem;
+    padding-bottom: .5rem;
+    border-radius: 10px;
+}
+.forums-topic-options{
+    /* puts each of the button in its on line */
+    display: block;
+    width: 50%;
+    margin: auto;
+    background-color: #bfbfbf;
+    border: none;
+    margin-top: 3rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    border-radius: 7px;
+}
+
+
+.forums-page footer{
+    /* Since the content on the page is not a lot this ensures that the footer is always at the bottom */
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+/* _____________ Forums Page Styling*/
