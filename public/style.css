@@ -350,7 +350,8 @@ ul.page-numbers{
     border-radius: 7px;
 }
 
-.forums-page footer{
+.forums-page footer,
+.view-forum-page  footer{
     /* Since the content on the page is not a lot this ensures that the footer is always at the bottom */
     position: absolute;
     bottom: 0;
@@ -441,3 +442,32 @@ ul.page-numbers{
     margin: 0;
 }
 /* _____________ Forums-Topics-View Page Styling*/
+
+/* _____________ View-forum Page Styling*/
+.forum-topic-actual-text{
+    width: 50%;
+    margin: auto;
+    margin-top: 3rem;
+    border-radius: 10px;
+    background-color: #bfbfbf;
+    padding: 2rem 3rem;
+    line-height: 2rem;
+    /* font-weight: 700; */
+    text-align: justify;
+}
+.forum-topic-view-back-btn{
+    width: 5rem;
+    margin: auto;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    padding: .75rem 1rem;
+    border-radius: 10px;
+    background-color: #ef3845;
+    color: white;
+    font-weight: 700;
+    border: none;
+}
+.create-forums-page footer {
+    margin-top: 0;
+}
+/* _____________ View-forum Page Styling*/
