@@ -365,7 +365,8 @@ ul.page-numbers{
 
 .forums-page footer,
 .view-forum-page  footer,
-.player-profile-page footer{
+.player-profile-page footer,
+.login-page footer{
     /* Since the content on the page is not a lot this ensures that the footer is always at the bottom */
     position: absolute;
     bottom: 0;
@@ -532,18 +533,24 @@ ul.page-numbers{
 /* _____________ Player-Profile Page Styling*/
 
 /* _____________ Register Page Styling*/
-.register-main-main{
+.register-main-main,
+.login-main-main {
     width: 450px;
     margin: auto;
     margin-top: 2rem;
 }
-.register-page .details-row{
+.login-main-main{
+    margin-top: 7rem;
+}
+.register-page .details-row,
+.login-page .details-row {
     display: flex;
     justify-content: space-between;
     margin-bottom: 1.5rem;
     align-items: center;
 }
-.register-details-input{
+.register-details-input,
+.login-details-input {
     background-color: #bfbfbf;
     padding: .5rem;
     font-family: 'Raleway', sans-serif;
@@ -554,18 +561,27 @@ ul.page-numbers{
     outline-color: #ef38453d;
     font-size: 15px;
 }
-#register-submit-input{
+#register-submit-input,
+#login-submit-input,
+#login-register-btn{
     padding: .75rem .5rem;
     background-color: #ef3845;
     color: white;
     border-radius: 20px;
     width: 7rem;
 }
+#login-register-btn{
+    border: none;
+    background-color: #bfbfbf;
+    color: black;
+    margin-right: 2rem;
+}
 .details-row.submit{
     display: flex;
     justify-content: end;
 }
-.register-page footer{
+.register-page footer,
+.login-page footer {
     margin-top: 1rem;
 }
 /* _____________ Register Page Styling*/
