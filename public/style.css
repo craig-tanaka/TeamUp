@@ -351,12 +351,14 @@ ul.page-numbers{
 }
 
 .forums-page footer,
-.view-forum-page  footer{
+.view-forum-page  footer,
+.player-profile-page footer{
     /* Since the content on the page is not a lot this ensures that the footer is always at the bottom */
     position: absolute;
     bottom: 0;
     left: 0;
     right: 0;
+    text-align: center;
 }
 /* _____________ Forums Page Styling*/
 
@@ -471,3 +473,47 @@ ul.page-numbers{
     margin-top: 0;
 }
 /* _____________ View-forum Page Styling*/
+
+/* _____________ Player-Profile Page Styling*/
+.player-profile-page{
+    text-align: left;
+}
+.player-profile-page nav{
+    box-shadow: 5px 0 25px 0 #010f1e29;
+}
+.player-profile-page nav{
+    position: static;
+}
+
+.player-main-details{
+    margin-top: 5rem;
+    margin-left: 15rem;
+}
+.player-profile-page .player-name,
+.player-profile-page .player-game,
+.player-profile-page .player-platform{
+    margin: 0;
+}
+.player-profile-page .player-game,
+.player-profile-page .player-platform{
+    color: #ef3845;
+}
+.player-page--main-main{
+    display: flex;
+    margin-left: 22rem;
+}
+.player-profile-page .player-profile-picture{
+    width: 5rem;
+    height: 5rem;
+    object-fit: cover;
+    object-position: top center;
+    margin-right: 2rem;
+}
+.player-profile-page .detail-header{
+    margin-bottom: 0;
+}
+.player-profile-page .detail-text{
+    margin-bottom: 2rem;
+    margin-top: .5rem;
+}
+/* _____________ Player-Profile Page Styling*/
