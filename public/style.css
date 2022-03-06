@@ -575,6 +575,8 @@ ul.page-numbers{
     background-color: #bfbfbf;
     color: black;
     margin-right: 2rem;
+    font-family: 'Raleway',
+    sans-serif;
 }
 .details-row.submit{
     display: flex;
