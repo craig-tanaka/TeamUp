@@ -344,8 +344,8 @@ ul.page-numbers{
     width: 50%;
     margin: auto;
     margin-top: 5rem;
-    padding-top: .5rem;
-    padding-bottom: .5rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
     border-radius: 10px;
 }
 .forums-topic-options{
@@ -360,7 +360,6 @@ ul.page-numbers{
     margin-top: 3rem;
     padding-top: 1rem;
     padding-bottom: 1rem;
-    font-weight: 700;
     cursor: pointer;
     border-radius: 7px;
     font-family: ;
