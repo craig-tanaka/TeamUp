@@ -571,26 +571,31 @@ ul.page-numbers{
 /* _____________ Register Page Styling*/
 
 
-/* _____________ create-player-card Page Styling*/
+/* _____________ create-player-card & create-team-card Page Styling*/
 /* this selects every element in the page under the main-main secton, puts them in their on line */
-.create-player-card-main-main{
+.create-player-card-main-main,
+.create-team-card-main-main {
     width: 40%;
     margin: auto;
 }
-.create-player-card-main-main > *{
+.create-player-card-main-main > *,
+.create-team-card-main-main>* {
     display: block;
 }
 
-.create-player-card-profile-placeholder{
+.create-player-card-profile-placeholder,
+.create-team-card-profile-placeholder {
     width: 7rem;
     margin: auto;
     margin-top: .5rem;
     border-radius: 50%;
 }
-.create-player-card-label{
+.create-player-card-label,
+.create-team-card-label {
     margin-top: 1.5rem;
 }
-.create-player-card-input{
+.create-player-card-input,
+.create-team-card-input {
     background-color: #bfbfbf;
     outline-width: 1px;
     outline-color: #ef38453d;
@@ -605,25 +610,29 @@ ul.page-numbers{
     box-sizing: border-box;
     border-radius: 10px;
 }
-select.create-player-card-input{
+select.create-player-card-input,
+select.create-team-card-input {
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
 }
-.create-player-card-submit-container{
+.create-player-card-submit-container,
+.create-team-card-submit-container {
     display: flex;
     justify-content: end;
     width: 20rem;
     margin: auto;
     margin-top: 1.5rem;
 }
-.create-player-card-input.submit{
+.create-player-card-input.submit,
+.create-team-card-input.submit {
     background-color: #ef3845;
     border-radius: 10px;
     color: white;
     margin: 0;
     width: 5rem;
 }
-.create-player-card-page footer{
+.create-player-card-page footer,
+.create-team-card-page footer {
     margin-top: 2rem;
 }
-/* _____________ create-player-card Page Styling*/
+/* _____________ create-player-card & create-team-card Page Styling*/
