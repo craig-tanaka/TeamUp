@@ -12,6 +12,7 @@ const forumTopics = document.querySelectorAll('.forums-topic-row')
 // adds an event to all topics that will run when the topic is clicked
 forumTopics.forEach(topic => { 
     topic.addEventListener('click', () => { 
-        window.location = './view-forum.html'
+        // changes the page once the topic is clicked to the view-forum page, the url parameter is set to topic title which is inside the second child element of current topic element markup
+        window.location = './view-forum.html?topic=' + topic.children.item(1).innerHTML;
     })
 })
