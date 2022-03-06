@@ -574,6 +574,7 @@ ul.page-numbers{
     color: white;
     border-radius: 20px;
     width: 7rem;
+    cursor: pointer;
 }
 #login-register-btn{
     background-color: #bfbfbf;
