@@ -530,3 +530,42 @@ ul.page-numbers{
     margin-top: .5rem;
 }
 /* _____________ Player-Profile Page Styling*/
+
+/* _____________ Register Page Styling*/
+.register-main-main{
+    width: 450px;
+    margin: auto;
+    margin-top: 2rem;
+}
+.register-page .details-row{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1.5rem;
+    align-items: center;
+}
+.register-details-input{
+    background-color: #bfbfbf;
+    padding: .5rem;
+    font-family: 'Raleway', sans-serif;
+    border: none;
+    border-radius: 5px;
+    width: 15rem;
+    outline-width: 1px;
+    outline-color: #ef38453d;
+    font-size: 15px;
+}
+#register-submit-input{
+    padding: .75rem .5rem;
+    background-color: #ef3845;
+    color: white;
+    border-radius: 20px;
+    width: 7rem;
+}
+.details-row.submit{
+    display: flex;
+    justify-content: end;
+}
+.register-page footer{
+    margin-top: 1rem;
+}
+/* _____________ Register Page Styling*/
