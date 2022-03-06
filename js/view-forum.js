@@ -6,4 +6,10 @@ const urlParameter = new URLSearchParams(window.location.search);
 const pageHeaderText = urlParameter.get('topic');
 pageHeader.innerHTML = pageHeaderText;
 
+// grabs the back button and puts it in a constant
+const backBtn = document.querySelector('.forum-topic-view-back-btn');
 
+// adds an event to to back button that will return site to previous page when button clicked
+backBtn.addEventListener('click', () => { 
+    history.back();
+})
