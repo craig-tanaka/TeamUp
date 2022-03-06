@@ -569,3 +569,61 @@ ul.page-numbers{
     margin-top: 1rem;
 }
 /* _____________ Register Page Styling*/
+
+
+/* _____________ create-player-card Page Styling*/
+/* this selects every element in the page under the main-main secton, puts them in their on line */
+.create-player-card-main-main{
+    width: 40%;
+    margin: auto;
+}
+.create-player-card-main-main > *{
+    display: block;
+}
+
+.create-player-card-profile-placeholder{
+    width: 7rem;
+    margin: auto;
+    margin-top: .5rem;
+    border-radius: 50%;
+}
+.create-player-card-label{
+    margin-top: 1.5rem;
+}
+.create-player-card-input{
+    background-color: #bfbfbf;
+    outline-width: 1px;
+    outline-color: #ef38453d;
+    font-family: 'Raleway',
+    sans-serif;
+    font-size: 15px;
+    border: none;
+    padding: .5rem;
+    width: 20rem;
+    margin: auto;
+    margin-top: .5rem;
+    box-sizing: border-box;
+    border-radius: 10px;
+}
+select.create-player-card-input{
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+.create-player-card-submit-container{
+    display: flex;
+    justify-content: end;
+    width: 20rem;
+    margin: auto;
+    margin-top: 1.5rem;
+}
+.create-player-card-input.submit{
+    background-color: #ef3845;
+    border-radius: 10px;
+    color: white;
+    margin: 0;
+    width: 5rem;
+}
+.create-player-card-page footer{
+    margin-top: 2rem;
+}
+/* _____________ create-player-card Page Styling*/
