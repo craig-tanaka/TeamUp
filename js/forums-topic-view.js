@@ -5,3 +5,13 @@ const pageHeader = document.querySelector('.page-header');
 const urlParameter = new URLSearchParams(window.location.search);
 const pageHeaderText = urlParameter.get('prev');
 pageHeader.innerHTML = pageHeaderText + ' Gaming';
+
+// grabs all the topics on the page and places them in a single constant
+const forumTopics = document.querySelectorAll('.forums-topic-row')
+
+// adds an event to all topics that will run when the topic is clicked
+forumTopics.forEach(topic => { 
+    topic.addEventListener('click', () => { 
+        window.location = './view-forum.html'
+    })
+})
