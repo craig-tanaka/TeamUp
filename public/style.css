@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;500;700&display=swap');
 
 /* remove all default styling on links */
  a,
@@ -366,7 +366,8 @@ ul.page-numbers{
 .forums-page footer,
 .view-forum-page  footer,
 .player-profile-page footer,
-.login-page footer{
+.login-page footer,
+.invitations-page footer{
     /* Since the content on the page is not a lot this ensures that the footer is always at the bottom */
     position: absolute;
     bottom: 0;
@@ -653,3 +654,27 @@ select.create-team-card-input {
     margin-top: 2rem;
 }
 /* _____________ create-player-card & create-team-card Page Styling*/
+
+
+/* _____________ Invitations Page Styling*/
+.invitations-main-main{
+    width: 40%;
+    margin: auto;
+    margin-top: 5rem;
+}
+.invitation{
+    background-color: #bfbfbf;
+    text-align: left;
+    padding: 1rem 1.25rem;
+    margin-top: 2rem;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.invitation-default-text{
+    font-weight: 500;
+}
+.invitation-sender{
+    font-weight: 300;
+    font-style: italic;
+}
+/* _____________ Invitations Page Styling*/
