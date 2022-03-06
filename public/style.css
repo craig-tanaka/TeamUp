@@ -571,10 +571,9 @@ ul.page-numbers{
     width: 7rem;
 }
 #login-register-btn{
-    border: none;
     background-color: #bfbfbf;
     color: black;
-    margin-right: 2rem;
+    margin-right: 1rem;
     font-family: 'Raleway',
     sans-serif;
 }
