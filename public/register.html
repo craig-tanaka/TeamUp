@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>TeamUp | Register</title>
+
+    <!-- Link to css page -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- update the version number as needed -->
+    <script defer src="/__/firebase/9.6.7/firebase-app-compat.js"></script>
+    <!-- include only the Firebase features as you need -->
+    <script defer src="/__/firebase/9.6.7/firebase-auth-compat.js"></script>
+    <script defer src="/__/firebase/9.6.7/firebase-database-compat.js"></script>
+    <script defer src="/__/firebase/9.6.7/firebase-firestore-compat.js"></script>
+    <script defer src="/__/firebase/9.6.7/firebase-functions-compat.js"></script>
+    <script defer src="/__/firebase/9.6.7/firebase-messaging-compat.js"></script>
+    <script defer src="/__/firebase/9.6.7/firebase-storage-compat.js"></script>
+    <script defer src="/__/firebase/9.6.7/firebase-analytics-compat.js"></script>
+    <script defer src="/__/firebase/9.6.7/firebase-remote-config-compat.js"></script>
+    <script defer src="/__/firebase/9.6.7/firebase-performance-compat.js"></script>
+    <!-- 
+      initialize the SDK after all desired features are loaded, set useEmulator to false
+      to avoid connecting the SDK to running emulators.
+    -->
+    <script defer src="/__/firebase/init.js?useEmulator=true"></script>
+</head>
+
+<body class="register-page">
+    <nav>
+        <h1>
+            <a href="./index.html">
+                <img src="./img/teamup-logo.png" alt="TeamUp" class="site-logo">
+            </a>
+        </h1>
+        <ul id="nav-links">
+            <li class="nav-link"><a href="./players.html">PLAYERS</a></li>
+            <li class="nav-link"><a href="./teams.html">TEAMS</a></li>
+            <li class="nav-link active"><a href="./forums.html">FORUMS</a></li>
+            <span id="account-links">
+                <li id="nav-register-link" class="nav-link"><a>Register</a></li>
+                <li id="nav-login-link" class="nav-link"><a>Login</a></li>
+            </span>
+        </ul>
+    </nav>
+
+    <main>
+        <h2 class="page-header">Create Your Account</h2>
+
+        <section class="register-main-main">
+            <div class="details-row">
+                <label for="username" class="register-details-label">Username</label>
+                <input type="text" name="username" id="register-username-input" class="register-details-input">
+            </div>
+            
+            <div class="details-row">
+                <label for="email" class="register-details-label">Email</label>
+                <input type="text" name="email" id="register-email-input" class="register-details-input">
+            </div>
+
+            <div class="details-row">
+                <label for="firstname" class="register-details-label">First Name</label>
+                <input type="text" name="firstname" id="register-firstname-input" class="register-details-input">
+            </div>
+
+            <div class="details-row">
+                <label for="lastname" class="register-details-label">Last Name</label>
+                <input type="text" name="lastname" id="register-lastname-input" class="register-details-input">
+            </div>
+
+            <div class="details-row">
+                <label for="birthdate" class="register-details-label">Birthdate</label>
+                <input type="text" name="birthdate" id="register-birthdate-input" class="register-details-input">
+            </div>
+
+            <div class="details-row">
+                <label for="password" class="register-details-label">Password</label>
+                <input type="text" name="password" id="register-password-input" class="register-details-input">
+            </div>
+
+            <div class="details-row">
+                <label for="confirm-password" class="register-details-label">Confirm Password</label>
+                <input type="text" name="confirm-password" id="register-confirm-password-input" class="register-details-input">
+            </div>
+
+            <input type="submit" value="Submit">
+
+        </section>
+
+    </main>
+
+    <footer>@ Copyright 2022</footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const loadEl = document.querySelector('#load');
+            // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
+            // // The Firebase SDK is initialized and available here!
+            //
+            // firebase.auth().onAuthStateChanged(user => { });
+            // firebase.database().ref('/path/to/ref').on('value', snapshot => { });
+            // firebase.firestore().doc('/foo/bar').get().then(() => { });
+            // firebase.functions().httpsCallable('yourFunction')().then(() => { });
+            // firebase.messaging().requestPermission().then(() => { });
+            // firebase.storage().ref('/path/to/ref').getDownloadURL().then(() => { });
+            // firebase.analytics(); // call to activate
+            // firebase.analytics().logEvent('tutorial_completed');
+            // firebase.performance(); // call to activate
+            //
+            // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
+
+            try {
+                let app = firebase.app();
+                let features = [
+                    'auth',
+                    'database',
+                    'firestore',
+                    'functions',
+                    'messaging',
+                    'storage',
+                    'analytics',
+                    'remoteConfig',
+                    'performance',
+                ].filter(feature => typeof app[feature] === 'function');
+                loadEl.textContent = `Firebase SDK loaded with ${features.join(', ')}`;
+            } catch (e) {
+                console.error(e);
+                loadEl.textContent = 'Error loading the Firebase SDK, check the console.';
+            }
+        });
+    </script>
+</body>
+
+</html>
