@@ -484,6 +484,9 @@ ul.page-numbers{
     color: white;
     font-weight: 700;
     border: none;
+    cursor: pointer;
+    font-family: 'Raleway',
+    sans-serif;
 }
 .create-forums-page footer {
     margin-top: 0;
