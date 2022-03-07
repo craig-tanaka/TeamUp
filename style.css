@@ -168,7 +168,6 @@ h2{
 .why-section-card:nth-child(1){
     background-image: url("./img/why-section-card-1.jpg");
     background-color: rgba(240, 248, 255, 0.713);
-    margin-left: 4rem;
 }
 .why-section-card:nth-child(2){
     background-image: url("./img/why-section-card-2.jpg");
