@@ -42,10 +42,13 @@ function showLoggedUserInterface() {
     
     // grabs the logout button and sets the code to logout
     document.querySelector('.user-nav-links-container > .logout').addEventListener('click', () => {
-        // when logout button is pressed, first set the site wide storage loggen status to no, so that when we travel between pages, each page will know the user is logged out
-
-        // sessionStorage.setItem('loggedIn', 'No');
-        // window.location = './index.html';
+        // signs out user then reloads page
+        firebase.auth().signOut().then(() => {
+            // Sign-out successful.
+            window.location = './index.html';
+        }).catch((error) => {
+            // An error happened.
+        });
     });
 
     // grabs invitations img and an event that changes page to invitations page whenever the image is clicked
