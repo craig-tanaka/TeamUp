@@ -652,7 +652,11 @@ ul.page-numbers{
 }
 .details-row.submit{
     display: flex;
-    justify-content: end;
+    justify-content: space-between;
+}
+.register-error-label{
+    color: #ef3845;
+    font-style: italic;
 }
 .register-page footer,
 .login-page footer {
