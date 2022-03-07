@@ -334,6 +334,7 @@ ul.page-numbers{
 }
 .search-selection-criteria .selection-option{
     padding-bottom: .5rem;
+    cursor: pointer;
 }
 .search-selection-criteria p{
     margin: 0;
