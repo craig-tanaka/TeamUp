@@ -140,6 +140,7 @@ h2{
     border-width: 1px;
     font-family: 'Raleway',
     sans-serif;
+    outline: none;
 }
 
 #why-teamup--section {
