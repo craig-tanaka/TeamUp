@@ -654,7 +654,7 @@ ul.page-numbers{
     display: flex;
     justify-content: space-between;
 }
-.register-error-label{
+.register-error-label,.login-error-label{
     color: #ef3845;
     font-style: italic;
 }

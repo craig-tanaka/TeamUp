@@ -8,6 +8,12 @@
 
     <!-- Link to css page -->
     <link rel="stylesheet" href="style.css">
+
+    <!-- Link to the Firebase scripts, added to enable database storage -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+
     <!-- Link to the site javascript file -->
     <script defer src="./js/app.js"></script>
     <!-- link to page javascript file -->
@@ -37,8 +43,8 @@
 
         <section class="login-main-main">
             <div class="details-row">
-                <label for="username" class="login-details-label">Username</label>
-                <input type="text" name="username" id="login-username-input" class="login-details-input">
+                <label for="username" class="login-details-label">Email</label>
+                <input type="text" name="username" id="login-email-input" class="login-details-input">
             </div>
 
             <div class="details-row">
@@ -51,6 +57,7 @@
                 <input type="submit" value="Login" id="login-submit-input" class="login-details-input">
             </div>
 
+            <label class="login-error-label"></label>
         </section>
 
     </main>
