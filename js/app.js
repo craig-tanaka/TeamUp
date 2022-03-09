@@ -32,7 +32,7 @@ function showLoggedUserInterface() {
     accountLinksContainer.innerHTML =
         `<span class="player-nav-container-link">
             <img src="./img/invitations.png" id="nav-invitations-img" alt="invitations">
-            <li class="nav-link welcome">Welcome Hossam</li>
+            <li class="nav-link welcome">Welcome</li>
             <div class="user-nav-links-container">
                 <a class="player-card-nav-link" href="./create-player-card.html">Create Player Card</a>
                 <a class="team-card-nav-link" href="./create-team-card.html">Create Team Card</a>
@@ -70,6 +70,7 @@ function showLoggedUserInterface() {
 // if user has these cards, function places their links in navigation
 function getUserProfile() { 
     db.collection("users").doc(firebase.auth().currentUser.uid).get().then(doc => {
+        document.querySelector('.nav-link.welcome').innerHTML = `Welcome ${doc.data().userFirstName}`
         if (doc.data().playerHasCard) {
             document.querySelector('.user-nav-links-container > .player-card-nav-link').innerHTML = 'Your Card';
             document.querySelector('.user-nav-links-container > .player-card-nav-link').href = './player-profile.html?u=' + firebase.auth().currentUser.uid;
