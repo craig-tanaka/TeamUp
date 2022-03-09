@@ -11,11 +11,11 @@ const firebaseConfig = {
 // Initialize Firebase app and database
 const app = firebase.initializeApp(firebaseConfig);
 const db = firebase.firestore();
+const storageReference = firebase.storage().ref();
 
 
-
-firebase.auth().onAuthStateChanged(function(user) {
-    if (user) {
+firebase.auth().onAuthStateChanged(function(userCredential) {
+    if (userCredential) {
         // User is signed in.
         showLoggedUserInterface();
     } else {
