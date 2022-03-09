@@ -3,7 +3,8 @@ const submitBtn = document.querySelector('.create-player-card-input.submit');
 // gets error label and stores reference to it in a constant
 const errorLabel = document.querySelector('.create-player-card-error-label');
 
-// launches an event when user clicks submit
+// launches an event when a user clicks submit
+// the event checks the user inputs for errors before trying to submit the player card to the database
 submitBtn.addEventListener('click', () => { 
     if (validateForm()) {
         submitBtn.style.display = 'none';
