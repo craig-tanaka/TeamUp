@@ -97,7 +97,7 @@ function updateUserDocument() {
         "playerHasCard": true
     }).then(() => { 
         // console.log("Document successfully updated!");
-        window.location = './player-profile.html?user=' + firebase.auth().currentUser.uid;
+        window.location = './player-profile.html?u=' + firebase.auth().currentUser.uid;
 
     })
 }

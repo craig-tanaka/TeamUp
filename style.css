@@ -86,7 +86,8 @@ nav{
     position: absolute;
     right: 0;
     top: 0;
-    background-color: white;
+    background-color: #ffffff44;
+    backdrop-filter: blur(3px);
     box-shadow: 1px 1px 3px 0 #132232b3;
     margin-top: 4rem;
     margin-right: 8rem;
@@ -101,9 +102,9 @@ nav{
 .user-nav-links-container > a{
     display: block;
     margin-bottom: 1rem;
-    color: black;
+    font-weight: 300;
 }
-.user-nav-links-container > .logout{
+.user-nav-links-container > .logout-nav-link{
     margin-bottom: 0;
     background-color: #ef3845;
     color: white;

@@ -18,6 +18,7 @@ firebase.auth().onAuthStateChanged(function(userCredential) {
     if (userCredential) {
         // User is signed in.
         showLoggedUserInterface();
+        getUserProfile();
     } else {
         // No user is signed in.
     }
@@ -33,15 +34,15 @@ function showLoggedUserInterface() {
             <img src="./img/invitations.png" id="nav-invitations-img" alt="invitations">
             <li class="nav-link welcome">Welcome Hossam</li>
             <div class="user-nav-links-container">
-                <a href="./create-player-card.html">Create Player Card</a>
-                <a href="./create-team-card.html">Create Team Card</a>
-                <a href="./create-your-forum.html">Create Forum</a>
-                <a href="" class="logout">Logout</a>
+                <a class="player-card-nav-link" href="./create-player-card.html">Create Player Card</a>
+                <a class="team-card-nav-link" href="./create-team-card.html">Create Team Card</a>
+                <a class="create-forum-nav-link" href="./create-your-forum.html">Create Forum</a>
+                <a href="" class="logout-nav-link">Logout</a>
             </div>
         </span>`;
     
     // grabs the logout button and sets the code to logout
-    document.querySelector('.user-nav-links-container > .logout').addEventListener('click', () => {
+    document.querySelector('.user-nav-links-container > .logout-nav-link').addEventListener('click', () => {
         // signs out user then reloads page
         firebase.auth().signOut().then(() => {
             // Sign-out successful.
@@ -63,4 +64,21 @@ function showLoggedUserInterface() {
         else
             document.querySelector('.user-nav-links-container').style.display = 'block';
     });
+}
+
+// Function checks if user has player card and team cards
+// if user has these cards, function places their links in navigation
+function getUserProfile() { 
+    db.collection("users").doc(firebase.auth().currentUser.uid).get().then(doc => {
+        if (doc.data().playerHasCard) {
+            document.querySelector('.user-nav-links-container > .player-card-nav-link').innerHTML = 'Your Card';
+            document.querySelector('.user-nav-links-container > .player-card-nav-link').href = './player-profile.html?u=' + firebase.auth().currentUser.uid;
+
+        }
+        if (doc.data().playerHasTeamCard) {
+            document.querySelector('.user-nav-links-container > .team-card-nav-link').innerHTML = 'Team Card';
+            document.querySelector('.user-nav-links-container > .team-card-nav-link').href = './team-profile.html?u=' + firebase.auth().currentUser.uid;
+
+        }
+     })
 }
