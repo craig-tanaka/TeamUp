@@ -577,6 +577,9 @@ ul.page-numbers{
     display: flex;
     margin-left: 22rem;
 }
+.other-player-details {
+    margin-right: 1rem;
+}
 .player-profile-page .player-profile-picture{
     width: 5rem;
     height: 5rem;
@@ -602,6 +605,64 @@ ul.page-numbers{
     color: white;
     border: none;
     border-radius: 10px;
+}
+.message-window {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 16rem;
+    width: 27rem;
+    align-items: center;
+    margin: auto;
+    background-color: #ffffff8a;
+    backdrop-filter: blur(1px);
+    border-radius: 20px;
+    padding: 1rem;
+}
+.message-window-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #050714bd;
+}
+label.message-text-label {
+    font-weight: 700;
+    color: #0e0000;
+    font-size: 15px;
+}
+textarea#message-text-input {
+    margin-top: 1.3rem;
+    width: 20rem;
+    height: 7rem;
+    padding: 1rem;
+    border: none;
+    background: #c9c8c861;
+    box-shadow: inset 5px 3px 5px 0px #9b172017;
+    border-radius: 15px;
+    outline: none;
+    color: #3a0303;
+    font-weight: 500;
+    font-style: italic;
+    text-shadow: 12px 8px 1px #0000000d;
+    font-size: 15px;
+}
+input.message-text-submit {
+    margin-top: 1rem;
+    padding: 0.75rem 1rem;
+    border-radius: 5px;
+    border: none;
+    color: white;
+    background-color: #ef3845;
+    box-shadow: 1px 1px 2px 0 #8d06066b;
+    font-weight: 700;
+    cursor: pointer;
 }
 /* _____________ Player-Profile Page Styling*/
 
