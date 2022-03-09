@@ -12,6 +12,11 @@ const urlParameter = new URLSearchParams(window.location.search);
 const requestedPlayerUid = urlParameter.get('u');
 
 // Gets the player card data from databse using the uid
+db.collection("users").doc(requestedPlayerUid).get()
+    .then(doc => { 
+        playerName.innerHTML = doc.data().userName;
+    }).catch(error => { 
+    })
 db.collection("playerCards").doc(requestedPlayerUid).get()
     .then(doc => {
         cardGame.innerHTML = doc.data().gameName;

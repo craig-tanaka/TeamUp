@@ -792,11 +792,12 @@ select.create-team-card-input {
         font-weight: 500;
     }
     .player-main-details {
-        margin-left: 11rem;
+        margin-left: 5rem;
     }
 
     .player-page--main-main {
-        margin-left: 17rem;
+        margin-left: 9rem;
+        margin-right: 1rem;
     }
     .main-section {
         justify-content: space-around;
@@ -812,6 +813,13 @@ select.create-team-card-input {
     .why-section-card p {
         margin: 0 0rem;
         font-size: 18px;
+    }
+    .player-page--main-main {
+        margin-left: 6rem;
+        margin-right: 1rem;
+    }
+    .player-main-details {
+        margin-left: 2rem;
     }
 }
 
