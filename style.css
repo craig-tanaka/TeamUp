@@ -11,8 +11,6 @@
 
 body{
     margin: 0;
-    font-family: 'Raleway',
-    sans-serif;
     text-align: center;
 }
 body.index-page{
@@ -22,6 +20,10 @@ body.index-page{
     color: white;
     height: 100vh;
     overflow: hidden;
+}
+* {
+    font-family: 'Raleway',
+        sans-serif;
 }
 
 
@@ -139,8 +141,6 @@ h2{
     width: 21.5rem;
     border-radius: 15px;
     border-width: 1px;
-    font-family: 'Raleway',
-    sans-serif;
     outline: none;
 }
 
@@ -299,7 +299,6 @@ ul.page-numbers{
 }
 .side-section .search-input{
     padding: 10px;
-    font-family: 'Raleway', sans-serif;
     padding-left: 2rem;
     background-color: #e7e7e7;
     border: none;
@@ -405,8 +404,6 @@ ul.page-numbers{
 }
 .forums-topic-options{
     /* puts each of the button in its on line */
-    font-family: 'Raleway',
-    sans-serif;
     display: block;
     width: 50%;
     margin: auto;
@@ -450,8 +447,6 @@ ul.page-numbers{
 }
 
 .create-forum-input{
-    font-family: 'Raleway',
-    sans-serif;
     background-color: #bfbfbf;
     border: none;
     outline-width: 1px;
@@ -541,8 +536,6 @@ ul.page-numbers{
     font-weight: 700;
     border: none;
     cursor: pointer;
-    font-family: 'Raleway',
-    sans-serif;
 }
 .create-forums-page footer {
     margin-top: 0;
@@ -626,7 +619,6 @@ ul.page-numbers{
 .login-details-input {
     background-color: #bfbfbf;
     padding: .5rem;
-    font-family: 'Raleway', sans-serif;
     border: none;
     border-radius: 5px;
     width: 15rem;
@@ -648,8 +640,6 @@ ul.page-numbers{
     background-color: #bfbfbf;
     color: black;
     margin-right: 1rem;
-    font-family: 'Raleway',
-    sans-serif;
 }
 .details-row.submit{
     display: flex;
@@ -701,8 +691,6 @@ ul.page-numbers{
     background-color: #bfbfbf;
     outline-width: 1px;
     outline-color: #ef38453d;
-    font-family: 'Raleway',
-    sans-serif;
     font-size: 15px;
     border: none;
     padding: .5rem;
