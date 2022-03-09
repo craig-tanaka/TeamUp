@@ -81,10 +81,23 @@ function uploadProfilePicture() {
 
     picRef.put(profilePicture).then((snapshot) => {
         // console.log('Uploaded a blob or file!');
-        window.location = './player-profile.html?user=' + firebase.auth().currentUser.uid;
+        updateUserDocument();
     });
 }
 
+// launches an event to the picture in the form,
+// the event opens the file inputs, file exprorer so that the user can select their pic
 document.querySelector('#player-card-profile-picture-input').addEventListener('change', () => { 
     document.querySelector('.create-player-card-profile-placeholder').src = URL.createObjectURL(document.querySelector('#player-card-profile-picture-input').files[0]);
 })
+
+// a function that updates the users profile database to say he now has a player card
+function updateUserDocument() {
+    db.collection("users").doc(firebase.auth().currentUser.uid).update({
+        "playerHasCard": true
+    }).then(() => { 
+        // console.log("Document successfully updated!");
+        window.location = './player-profile.html?user=' + firebase.auth().currentUser.uid;
+
+    })
+}
