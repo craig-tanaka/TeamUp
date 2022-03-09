@@ -687,7 +687,8 @@ ul.page-numbers{
     border-radius: 50%;
     cursor: pointer;
 }
-#player-card-profile-picture-input{
+#player-card-profile-picture-input,
+#team-card-profile-picture-input {
     display: none;
 }
 .create-player-card-label,
@@ -733,7 +734,8 @@ select.create-team-card-input {
     width: 5rem;
     cursor: pointer;
 }
-.create-player-card-error-label{
+.create-player-card-error-label,
+.create-team-card-error-label{
     color: #ef3845;
     font-style: italic;
 }

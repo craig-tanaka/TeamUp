@@ -8,8 +8,17 @@
 
     <!-- Link to css page -->
     <link rel="stylesheet" href="style.css">
+
+    <!-- Link to the Firebase scripts, added to enable database storage -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>
+
     <!-- Link to the site javascript file -->
     <script defer src="./js/app.js"></script>
+    <!-- Link to the page javascript file -->
+    <script defer src="./js/create-team-card.js"></script>
 </head>
 
 <body class="create-team-card-page">
@@ -37,33 +46,35 @@
 
             <label for="profile-picture" class="create-team-card-label">Upload Team Logo</label>
             <img src="./img/placeholder-profile.jpg" class="create-team-card-profile-placeholder">
+            <input type="file" name="team-profile-picture" id="team-card-profile-picture-input" accept=".jpg">
             
             <label for="game-name" class="create-team-card-label">Name Of The Game</label>
-            <input type="text" name="game-name" class="create-team-card-input">
+            <input type="text" name="game-name" id="team-card-game-name-input" class="create-team-card-input">
             
             <label for="team-about" class="create-team-card-label">About</label>
-            <textarea name="team-about" class="create-team-card-input" cols="30" rows="10"></textarea>
+            <textarea name="team-about" id="team-card-about-input" class="create-team-card-input" cols="30" rows="10"></textarea>
             
             <label for="team-description" class="create-team-card-label">Describe Your Team</label>
-            <textarea name="team-description" class="create-team-card-input" cols="30" rows="2"></textarea>
+            <textarea name="team-description" id="team-card-description-input" class="create-team-card-input" cols="30" rows="2"></textarea>
             
             <label for="game-type" class="create-team-card-label">Type of Game</label>
-            <select name="game-type" class="create-team-card-input">
+            <select name="game-type" id="team-card-game-type-input" class="create-team-card-input">
                 <option value="" class="game-type-select-option" disabled></option>
                 <option value="Physical" class="game-type-select-option">Physical</option>
                 <option value="Digital" class="game-type-select-option">Digital</option>
             </select>
 
             <label for="skill-level" class="create-team-card-label">Skill Level</label>
-            <select name="skill-level" class="create-team-card-input">
+            <select name="skill-level" id="team-card-skill-level-input" class="create-team-card-input">
                 <option value="" class="create-team-card-input" disabled></option>
-                <option value="Physical" class="create-team-card-input">Beginner</option>
-                <option value="Digital" class="create-team-card-input">Intermmiediate</option>
-                <option value="Digital" class="create-team-card-input">Expert</option>
-                <option value="Digital" class="create-team-card-input">Pro</option>
+                <option value="Beginner" class="create-team-card-input">Beginner</option>
+                <option value="Intermmiediate" class="create-team-card-input">Intermmiediate</option>
+                <option value="Expert" class="create-team-card-input">Expert</option>
+                <option value="Pro" class="create-team-card-input">Pro</option>
             </select>
 
             <div class="create-team-card-submit-container">
+                <label class="create-team-card-error-label"></label>
                 <input type="submit" value="Submit" class="create-team-card-input submit">
             </div>
 
