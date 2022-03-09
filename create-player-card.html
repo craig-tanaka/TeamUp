@@ -8,8 +8,17 @@
 
     <!-- Link to css page -->
     <link rel="stylesheet" href="style.css">
+
+    <!-- Link to the Firebase scripts, added to enable database storage -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>
+
     <!-- Link to the site javascript file -->
     <script defer src="./js/app.js"></script>
+    <!-- Link to the page javascript file -->
+    <script defer src="./js/create-player-card.js"></script>
 </head>
 
 <body class="create-player-card-page">
@@ -37,25 +46,26 @@
 
             <label for="profile-picture" class="create-player-card-label">Upload Your Profile Picture</label>
             <img src="./img/placeholder-profile.jpg" class="create-player-card-profile-placeholder">
+            <input type="file" name="player-profile-picture" id="player-card-profile-picture-input" accept=".jpg">
             
             <label for="game-name" class="create-player-card-label">Name Of The Game</label>
-            <input type="text" name="game-name" class="create-player-card-input">
+            <input type="text" name="game-name" id="player-card-game-name-input" class="create-player-card-input">
             
             <label for="player-about" class="create-player-card-label">About</label>
-            <textarea name="player-about" class="create-player-card-input" cols="30" rows="10"></textarea>
+            <textarea name="player-about" id="player-card-about-input" class="create-player-card-input" cols="30" rows="10"></textarea>
             
             <label for="player-description" class="create-player-card-label">Description</label>
-            <textarea name="player-description" class="create-player-card-input" cols="30" rows="2"></textarea>
+            <textarea name="player-description" id="player-card-description-input" class="create-player-card-input" cols="30" rows="2"></textarea>
             
             <label for="game-type" class="create-player-card-label">Type of Game</label>
-            <select name="game-type" class="create-player-card-input">
+            <select name="game-type" id="player-card-game-type-input" class="create-player-card-input">
                 <option value="" class="game-type-select-option" disabled></option>
                 <option value="Physical" class="game-type-select-option">Physical</option>
                 <option value="Digital" class="game-type-select-option">Digital</option>
             </select>
 
             <label for="skill-level" class="create-player-card-label">Skill Level</label>
-            <select name="skill-level" class="create-player-card-input">
+            <select name="skill-level" id="player-card-skill-level-input" class="create-player-card-input">
                 <option value="" class="create-player-card-input" disabled></option>
                 <option value="Physical" class="create-player-card-input">Beginner</option>
                 <option value="Digital" class="create-player-card-input">Intermmiediate</option>
@@ -64,6 +74,7 @@
             </select>
 
             <div class="create-player-card-submit-container">
+                <label class="create-player-card-error-label"></label>
                 <input type="submit" value="Submit" class="create-player-card-input submit">
             </div>
 

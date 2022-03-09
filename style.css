@@ -680,9 +680,15 @@ ul.page-numbers{
 .create-player-card-profile-placeholder,
 .create-team-card-profile-placeholder {
     width: 7rem;
+    height: 7rem;
+    object-fit: cover;
     margin: auto;
     margin-top: .5rem;
     border-radius: 50%;
+    cursor: pointer;
+}
+#player-card-profile-picture-input{
+    display: none;
 }
 .create-player-card-label,
 .create-team-card-label {
@@ -712,7 +718,8 @@ select.create-team-card-input {
 .create-player-card-submit-container,
 .create-team-card-submit-container {
     display: flex;
-    justify-content: end;
+    justify-content: space-between;
+    align-items: center;
     width: 20rem;
     margin: auto;
     margin-top: 1.5rem;
@@ -724,6 +731,11 @@ select.create-team-card-input {
     color: white;
     margin: 0;
     width: 5rem;
+    cursor: pointer;
+}
+.create-player-card-error-label{
+    color: #ef3845;
+    font-style: italic;
 }
 .create-player-card-page footer,
 .create-team-card-page footer {
