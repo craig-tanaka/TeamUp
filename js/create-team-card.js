@@ -30,7 +30,7 @@ function validateForm(){
     if (!hasNoErrors) errorLabel.innerHTML = 'Please Fill in Missing Labels!!!!!';
 
     // check if user has selected profile picture
-    if (document.querySelector('#team-card-profile-picture-input').files.length == 0) {
+    if (document.querySelector('#team-card-profile-picture-input').files.length == 0 && !userHasOnlinePic) {
         hasNoErrors = false;
         errorLabel.innerHTML = 'No Profile Picture Selected';
     }
@@ -58,7 +58,11 @@ function createTeamCardDocument() {
     })
     .then((docRef) => {
         // console.log("Document written");
-        uploadProfilePicture();
+        if (document.querySelector('#team-card-profile-picture-input').files.length != 0) {
+            uploadProfilePicture();
+        } else {
+            window.location = './teams.html';
+        }
     })
     .catch((error) => {
         console.error("Error adding image: ", error);
@@ -81,10 +85,45 @@ function uploadProfilePicture() {
 
     picRef.put(profilePicture).then((snapshot) => {
         // console.log('Uploaded a blob or file!');
-        window.location = './team-profile.html?user=' + firebase.auth().currentUser.uid;
+        window.location = './teams.html';
     });
 }
 
 document.querySelector('#team-card-profile-picture-input').addEventListener('change', () => { 
     document.querySelector('.create-team-card-profile-placeholder').src = URL.createObjectURL(document.querySelector('#team-card-profile-picture-input').files[0]);
 })
+
+// a function that updates the users profile database to say he now has a player card
+function updateUserDocument() {
+    db.collection("users").doc(firebase.auth().currentUser.uid).update({
+        "playerHasTeamCard": true
+    }).then(() => { 
+        // console.log("Document successfully updated!");
+        window.location = './player-profile.html?u=' + firebase.auth().currentUser.uid;
+
+    })
+}
+
+// Check if user already has a team card, if user does it populates the page inputs with current team card data
+firebase.auth().onAuthStateChanged(function(userCredential) {
+    if (userCredential) {
+        // fill user fields
+        db.collection("teamCards").doc(userCredential.uid).get()
+        .then(doc => { 
+            document.querySelector('#team-card-game-name-input').value = doc.data().gameName;
+            document.querySelector('#team-card-about-input').value = doc.data().teamAbout;
+            document.querySelector('#team-card-description-input').value = doc.data().teamDescription;
+            document.querySelector('#team-card-skill-level-input').value = doc.data().skillLevel;
+
+            document.querySelector('.page-header').innerHTML = 'Update Team Card';
+        })
+        storageReference.child(`/teamCardPics/${userCredential.uid}/profile-picture.jpg`).getDownloadURL()
+        .then((url) => {
+            var img = document.querySelector('.create-team-card-profile-placeholder');
+            img.setAttribute('src', url);
+            userHasOnlinePic = true;
+            document.querySelector('.page-header').innerHTML = 'Update Team Card';
+        })
+    }
+});
+let userHasOnlinePic;
