@@ -8,8 +8,16 @@
 
     <!-- Link to css page -->
     <link rel="stylesheet" href="style.css">
+
+    <!-- Link to the Firebase scripts, added to enable database storage -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>
+
     <!-- Link to the site javascript file -->
     <script defer src="./js/app.js"></script>
+    <script defer src="./js/player-profile.js"></script>
 </head>
 
 <body class="player-profile-page">
@@ -41,16 +49,16 @@
             <img src="./img/player-car-header.jpg" class="player-profile-picture">
             <div class="other-player-details">
                 <h3 class="detail-header">About</h3>
-                <p class="detail-text">Im Hossam 25 years old, living Kuwait</p>
+                <p class="detail-text card-about">Im Hossam 25 years old, living Kuwait</p>
 
                 <h3 class="detail-header">Description</h3>
-                <p class="detail-text">I play pingpong for every fun every friday from 6-8pm. A bit skilled and won 1 local tournament</p>
+                <p class="detail-text card-description">I play pingpong for every fun every friday from 6-8pm. A bit skilled and won 1 local tournament</p>
 
                 <h3 class="detail-header">Type of Game</h3>
-                <p class="detail-text">Physical</p>
+                <p class="detail-text card-game-type">Physical</p>
 
                 <h3 class="detail-header">Name of Game</h3>
-                <p class="detail-text">PingPong</p>
+                <p class="detail-text card-game">PingPong</p>
 
                 <div class="leave-message-button-container">
                     <button id="leave-a-message-btn">Leave a Message</button>
