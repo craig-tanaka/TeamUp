@@ -21,4 +21,10 @@ db.collection("playerCards").doc(requestedPlayerUid).get()
         cardAbout.innerHTML = doc.data().playerAbout;
         cardDescription.innerHTML = doc.data().playerDescription;
     }).catch(error => { 
-})
+    })
+
+storageReference.child(`/playerCardPics/${requestedPlayerUid}/profile-picture.jpg`).getDownloadURL()
+        .then((url) => {
+            var img = document.querySelector('.player-profile-picture');
+            img.setAttribute('src', url);
+        })
