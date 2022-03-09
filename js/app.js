@@ -77,8 +77,6 @@ function getUserProfile() {
         }
         if (doc.data().playerHasTeamCard) {
             document.querySelector('.user-nav-links-container > .team-card-nav-link').innerHTML = 'Team Card';
-            document.querySelector('.user-nav-links-container > .team-card-nav-link').href = './team-profile.html?u=' + firebase.auth().currentUser.uid;
-
         }
      })
 }
