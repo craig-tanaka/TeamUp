@@ -10,7 +10,7 @@ submitBtn.addEventListener('click', () => {
         submitBtn.style.display = 'none';
         errorLabel.innerHTML = 'Creating Player Card......';
         fillVariables();
-        createPlayerCardDocument();
+        createplayerCardDocument();
     } else { 
         alert(errorLabel.innerHTML);
     }
@@ -47,7 +47,7 @@ document.querySelector('.create-player-card-profile-placeholder').addEventListen
 let profilePicture, gameName, playerAbout, playerDescription, gameType, skillLevel;
 
 // function to update player card variables when user click submits before submitting to database function 
-function createPlayerCardDocument() { 
+function createplayerCardDocument() { 
     // create player card document in database
     db.collection("playerCards").doc(firebase.auth().currentUser.uid).set({
         gameName: gameName,
