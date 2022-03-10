@@ -362,6 +362,12 @@ ul.page-numbers{
     justify-content: space-between;
     padding-top: .75rem;
 }
+.main-section-error-info-label {
+    color: #ef3845;
+    font-style: italic;
+    margin-top: 2.7rem;
+    margin-left: 1rem;
+}
 
 .player-card{
     background-color: white;
@@ -371,11 +377,15 @@ ul.page-numbers{
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
     cursor: pointer;
-    height: max-content;
+    height: 10rem;
+    width: 10rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .player-card-img{
-    width: 8rem;
+    width: 100%;
     height: 3rem;
     /* the line ensures that the image does loose its aspect ratio since we've set both a width and height on the image */
     object-fit: cover; 
@@ -390,7 +400,17 @@ ul.page-numbers{
 }
 /* And this targets the rest of the text in the player card */
 .player-card p{
-    margin: 0;
+    margin: 5px 15px;
+    font-size: 15px;
+    font-weight: 300;
+}
+.player-card p:nth-of-type(2) {
+    font-style: italic;
+    font-size: 13px;
+    font-weight: 500;
+}
+.player-card p:nth-of-type(3) {
+    font-size: 10px;
 }
 
 .players-page footer, .teams-page footer{
@@ -428,7 +448,9 @@ ul.page-numbers{
 .player-profile-page footer,
 .login-page footer,
 .invitations-page footer,
-.index-page footer {
+.index-page footer,
+.players-page footer,
+.teams-page footer{
     /* Since the content on the page is not a lot this ensures that the footer is always at the bottom */
     position: fixed;
     bottom: 0;

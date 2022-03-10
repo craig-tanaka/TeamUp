@@ -44,7 +44,7 @@ document.querySelector('.create-player-card-profile-placeholder').addEventListen
 })
 
 // creating variables to hold player card info
-let profilePicture, gameName, playerAbout, playerDescription, gameType, skillLevel;
+let profilePicture, playerPlatform, gameName, playerAbout, playerDescription, gameType, skillLevel;
 
 // function to update player card variables when user click submits before submitting to database function 
 function createplayerCardDocument() { 
@@ -54,7 +54,10 @@ function createplayerCardDocument() {
         playerAbout: playerAbout,
         playerDescription: playerDescription,
         gameType: gameType,
-        skillLevel: skillLevel
+        skillLevel: skillLevel,
+        playerName: userDoc.userName,
+        playerFirstName: userDoc.userFirstName,
+        playerPlatform: playerPlatform
     })
     .then((docRef) => {
         // console.log("Document written");
@@ -71,6 +74,7 @@ function fillVariables() {
     playerAbout = document.querySelector('#player-card-about-input').value;
     playerDescription = document.querySelector('#player-card-description-input').value;
     gameType = document.querySelector('#player-card-game-type-input').value;
+    playerPlatform = document.querySelector('#player-platform-input').value;
     skillLevel = document.querySelector('#player-card-skill-level-input').value;
 }
 

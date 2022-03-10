@@ -22,7 +22,7 @@ db.collection("playerCards").doc(requestedPlayerUid).get()
         cardGame.innerHTML = doc.data().gameName;
         playerGame.innerHTML = doc.data().gameName;
         cardGameType.innerHTML = doc.data().gameType;
-        playerPlatform.innerHTML = doc.data().gameType;
+        playerPlatform.innerHTML = doc.data().playerPlatform;
         cardAbout.innerHTML = doc.data().playerAbout;
         cardDescription.innerHTML = doc.data().playerDescription;
     }).catch(error => { 
