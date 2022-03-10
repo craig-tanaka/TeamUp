@@ -596,7 +596,7 @@ ul.page-numbers{
     width: 5rem;
     margin: auto;
     margin-top: 2rem;
-    margin-bottom: 2rem;
+    margin-bottom: 4rem;
     padding: .75rem 1rem;
     border-radius: 10px;
     background-color: #ef3845;
@@ -928,11 +928,13 @@ select.create-team-card-input {
     h2{
         font-weight: 500;
     }
-    .player-main-details {
+    .player-main-details,
+    .team-main-details{
         margin-left: 5rem;
     }
 
-    .player-page--main-main {
+    .player-page--main-main,
+    .team-page--main-main{
         margin-left: 9rem;
         margin-right: 1rem;
     }
@@ -951,11 +953,13 @@ select.create-team-card-input {
         margin: 0 0rem;
         font-size: 18px;
     }
-    .player-page--main-main {
+    .player-page--main-main,
+    .team-page--main-main {
         margin-left: 6rem;
         margin-right: 1rem;
     }
-    .player-main-details {
+    .player-main-details,
+    .team-main-details {
         margin-left: 2rem;
     }
 }

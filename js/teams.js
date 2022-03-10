@@ -202,8 +202,8 @@ function addCardsToDom() {
 
         teamCard.innerHTML = `
                         <img src="./img/player-car-header.jpg" class="team-card-img">
-                        <h4>${cardData.playerName}</h4>
-                        <p>${cardData.playerFirstName}</p>
+                        <h4>${cardData.teamDescription}</h4>
+                        <p>${cardData.playerName}</p>
                         <p>${cardData.gameName}</p>
                         <p>${cardData.skillLevel}</p>`
 
