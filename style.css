@@ -150,6 +150,14 @@ h2{
     border-radius: 15px;
     border-width: 1px;
     outline: none;
+    padding-left: 1.7rem;
+}
+.index-page .search-icon {
+    position: absolute;
+    width: 0.9rem;
+    margin-top: 0.65rem;
+    margin-left: 0.5rem;
+    cursor: pointer;
 }
 
 #why-teamup--section {
@@ -324,12 +332,19 @@ ul.page-numbers{
     border-radius: 3px;
     padding: .5rem;
 }
-.search-selection-criteria .body{
+.toggle-filter-btn {
+    margin-right: 0.5rem;
+    cursor: pointer;
+    border-left: 1px solid #00000029;
+    padding-left: 0.6rem;
+}
+.search-selection-criteria .body {
     background-color: #e2e2e2;
     padding-top: .5rem;
     border-radius: 3px;
     padding-left: .5rem;
     border: 1px solid #bfbfbf;
+    display: none;
 }
 .search-selection-criteria h4{
     margin: 0;

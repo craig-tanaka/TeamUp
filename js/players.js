@@ -1,12 +1,3 @@
-// Variable to hold player cards from database
-let cards;
-// Variable holding all cards filtered by sidebar options
-let cardsFiltered;
-// Variable to hold search value
-let searchValue = '';
-// variable used to check if this is first view update
-let isFirstViewUpdate = true;
-
 // grabs the selection-options and puts them in the respective constant
 const physicalSelectionOption = document.querySelector('.selection-option.physical');
 const digitalSelectionOption = document.querySelector('.selection-option.digital');
@@ -67,9 +58,60 @@ playstationSelectionOption.addEventListener('click', () => {
 })
 
 
+// Variables used to check whether the filter is diabled
+let isTypeFilterDisabled = true;
+let isPlatformFilterDisabled = true;
+// adds an event to the 1st button that expands the search filter
+document.querySelector('.toggle-filter-btn:first-of-type').addEventListener('click', () => { 
+    if (isTypeFilterDisabled) {
+        document.querySelector('.search-selection-criteria .body:first-of-type').style.display = 'block';
+        isTypeFilterDisabled = !isTypeFilterDisabled;
+        document.querySelector('.toggle-filter-btn:first-of-type').innerHTML = '&and;'
+        filterCards();
+    }
+    else { 
+        document.querySelector('.search-selection-criteria .body:first-of-type').style.display = 'none';
+        isTypeFilterDisabled = !isTypeFilterDisabled;
+        document.querySelector('.toggle-filter-btn:first-of-type').innerHTML = '&or;'
+        filterCards();
+    }
+})
+// adds an event to the 2nd button that expands the search filter
+document.querySelectorAll('.toggle-filter-btn')[1].addEventListener('click', () => {
+    if (isPlatformFilterDisabled) {
+        document.querySelectorAll('.search-selection-criteria .body:last-of-type')[1].style.display = 'block';
+        isPlatformFilterDisabled = !isPlatformFilterDisabled;
+        document.querySelectorAll('.toggle-filter-btn')[1].innerHTML = '&and;'
+        filterCards();
+    }else{
+        document.querySelectorAll('.search-selection-criteria .body:last-of-type')[1].style.display = 'none';
+        isPlatformFilterDisabled = !isPlatformFilterDisabled;
+        document.querySelectorAll('.toggle-filter-btn')[1].innerHTML = '&or;'
+        filterCards();
+    }
+});
+
+
+// Variable to hold player cards from database
+let cards;
+// Variable holding all cards filtered by sidebar options
+let cardsFiltered;
+// Variable to hold search value
+let searchValue = '';
+// variable used to check if this is first view update
+let isFirstViewUpdate = true;
+
+// creates a new object that we then use to get the URL Parameter made in the forums page antd make that the page header
+const urlParameter = new URLSearchParams(window.location.search);
+if (urlParameter.get('s')) { 
+    searchValue = urlParameter.get('s');
+    document.querySelector(".search-input").value = searchValue;
+}
+
 // launches an event when a user searches
 document.querySelector(".search-input").addEventListener('keyup', function (e) {
     searchValue = document.querySelector(".search-input").value;
+    window.history.replaceState(null, null, `?s=${searchValue}`);
     filterCards();
 });
 
@@ -102,41 +144,45 @@ function filterCards() {
 
 
     // filtering by game type----------------------------------------------------------
-    let gameType;
-    if (physicalSelectionOption.classList.contains('active')) {
-        gameType = 'Physical';
-    } else if (digitalSelectionOption.classList.contains('active')) {
-        gameType = 'Digital';
-    }
+    if (!isTypeFilterDisabled) {
+        let gameType;
+        if (physicalSelectionOption.classList.contains('active')) {
+            gameType = 'Physical';
+        } else if (digitalSelectionOption.classList.contains('active')) {
+            gameType = 'Digital';
+        }
 
-    if (cardsFiltered.docs) {
-        cardsFiltered = cardsFiltered.docs.filter(card => {
-            return card.data().gameType === gameType;
-        })
-    } else {
-        cardsFiltered = cardsFiltered.filter(card => {
-            return card.data().gameType === gameType;
-        })
+        if (cardsFiltered.docs) {
+            cardsFiltered = cardsFiltered.docs.filter(card => {
+                return card.data().gameType === gameType;
+            })
+        } else {
+            cardsFiltered = cardsFiltered.filter(card => {
+                return card.data().gameType === gameType;
+            })
+        }
     }
     // filtering by game type----------------------------------------------------------
 
 
     // filtering by platform----------------------------------------------------------
-    let gamePlatform;
-    if (pcSelectionOption.classList.contains('active')) {
-        gamePlatform= 'PC';
-    } else if (playstationSelectionOption.classList.contains('active')) {
-        gamePlatform = 'Playstation';
-    }
+    if (!isPlatformFilterDisabled) {
+        let gamePlatform;
+        if (pcSelectionOption.classList.contains('active')) {
+            gamePlatform = 'PC';
+        } else if (playstationSelectionOption.classList.contains('active')) {
+            gamePlatform = 'Playstation';
+        }
 
-    if (cardsFiltered.docs) {
-        cardsFiltered = cardsFiltered.docs.filter(card => {
-            return card.data().playerPlatform === gamePlatform;
-        })
-    } else {
-        cardsFiltered = cardsFiltered.filter(card => {
-            return card.data().playerPlatform === gamePlatform;
-        })
+        if (cardsFiltered.docs) {
+            cardsFiltered = cardsFiltered.docs.filter(card => {
+                return card.data().playerPlatform === gamePlatform;
+            })
+        } else {
+            cardsFiltered = cardsFiltered.filter(card => {
+                return card.data().playerPlatform === gamePlatform;
+            })
+        }
     }
     // filtering by platform----------------------------------------------------------
 

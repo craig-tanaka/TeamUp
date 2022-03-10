@@ -30,3 +30,28 @@ whyCardsRightBtns.forEach(btn => {
         
     })
 })
+
+
+
+
+// Grabs the search input on the page and saves a reference to it in a constant
+const searchInput = document.querySelector('#home-search');
+// Grabs a the search icon inside the search input on the page and saves a reference to it in a constant
+const searchIcon = document.querySelector('.search-icon');
+
+
+// adds an event whenever user presses enter to submit user search
+searchInput.addEventListener('keypress', function (e) {
+    if (e.key === 'Enter') {
+        searchUserInput();
+    }
+});
+// adds an event to when user presses search icon to start search
+searchIcon.addEventListener('click', () => { 
+    searchUserInput();
+})
+
+// function grabs user input and searches it on the players page
+function searchUserInput() {
+    window.location = './players.html?s=' + searchInput.value;
+}
