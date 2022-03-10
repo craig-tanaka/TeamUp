@@ -451,6 +451,7 @@ ul.page-numbers{
 }
 
 .forums-page footer,
+.forums-topic-page footer,
 .view-forum-page  footer,
 .player-profile-page footer,
 .teams-profile-page footer,
@@ -490,7 +491,8 @@ ul.page-numbers{
     outline-color: #ef3845;
     padding: .5rem;
     border-radius: 10px;
-    width: 40%;
+    width: 20rem;
+    box-sizing: border-box;
     margin: auto;
     margin-top: .5rem;
 }
@@ -503,6 +505,8 @@ ul.page-numbers{
     outline-color: #ef3845;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
+    border: none;
+    padding-right: 1.5rem;
 }
 .forum-type-select-option{
     padding: 1rem;
