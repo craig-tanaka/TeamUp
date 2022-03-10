@@ -68,6 +68,7 @@ function createplayerCardDocument() {
     });
 }
 
+// fills in variables with data before submitting 
 function fillVariables() { 
     profilePicture = document.querySelector('#player-card-profile-picture-input').files[0];
     gameName = document.querySelector('#player-card-game-name-input').value;
