@@ -14,18 +14,19 @@ const db = firebase.firestore();
 const storageReference = firebase.storage().ref();
 
 
-firebase.auth().onAuthStateChanged(function(userCredential) {
+// gets the accounts-link div in the navigation tag and stores a reference to it in a constant
+const accountLinksContainer = document.querySelector('#account-links');
+
+firebase.auth().onAuthStateChanged(function (userCredential) {
     if (userCredential) {
         // User is signed in.
         showLoggedUserInterface();
         getUserProfile();
     } else {
         // No user is signed in.
+        accountLinksContainer.style.display = 'flex';
     }
 });
-
-// gets the accounts-link div in the navigation tag and stores a reference to it in a constant
-const accountLinksContainer = document.querySelector('#account-links');
 
 // Removes the register and login buttons in the navigation since the user is logged in and shows user links
 function showLoggedUserInterface() { 
@@ -71,7 +72,7 @@ function showLoggedUserInterface() {
 function getUserProfile() { 
     db.collection("users").doc(firebase.auth().currentUser.uid).get().then(doc => {
         userDoc = doc.data();
-        document.querySelector('.nav-link.welcome').innerHTML = `Welcome ${doc.data().userFirstName}`
+        document.querySelector('.nav-link.welcome').innerHTML = `Welcome ${doc.data().userFirstName}`;
         if (userDoc.playerHasCard) {
             document.querySelector('.user-nav-links-container > .player-card-nav-link').innerHTML = 'Your Card';
             document.querySelector('.user-nav-links-container > .player-card-nav-link').href = './player-profile.html?u=' + firebase.auth().currentUser.uid;
@@ -80,6 +81,7 @@ function getUserProfile() {
         if (userDoc.playerHasTeamCard) {
             document.querySelector('.user-nav-links-container > .team-card-nav-link').innerHTML = 'Team Card';
         }
+        accountLinksContainer.style.display = 'flex';
      })
 }
 

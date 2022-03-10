@@ -62,6 +62,7 @@ nav{
 #account-links{
     display: flex;
     align-items: center;
+    display: none;
 }
 .nav-link{
     font-weight: 500;
@@ -246,12 +247,11 @@ footer{
     margin-bottom: .5rem;
     padding-top: 8rem;
     padding-bottom: 3rem;
-
     background-image: url("./img/why-section-card-3.jpg");
     background-size: cover;
-    box-shadow: inset 0 0 0 2000px rgba(255, 255, 255, 0.620);
-
-    /* color: white; */
+    box-shadow: inset 0 0 0 2000px rgb(255 255 255 / 62%);
+    color: black;
+    font-weight: 700;
 }
 .results-page-list{
     display: flex;
@@ -287,10 +287,12 @@ ul.page-numbers{
 .page-main-body{
     display: flex;
     background-color: #e3e1e1;
+    padding: 1rem 0.4rem;
+    padding-bottom: 6rem;
 }
 
 .side-section{
-    background-color: white;
+    background-color: #ffffffa3;
     margin-right: 1rem;
     border-top-right-radius: 10px;
     border-bottom-right-radius: 10px;
@@ -327,8 +329,8 @@ ul.page-numbers{
     margin-bottom: 2rem;
 }
 .search-selection-criteria .header{
-    background-color: #bfbfbf;
-    border-bottom: 1px solid rgb(61, 61, 61);
+    background-color: #e7e7e7;
+    border-bottom: 1px solid rgb(223 220 220);
     border-radius: 3px;
     padding: .5rem;
 }
@@ -375,8 +377,9 @@ ul.page-numbers{
 .main-section{
     display: flex;
     flex-wrap: wrap;
+    row-gap: 1.5rem;
     justify-content: space-between;
-    padding-top: .75rem;
+    /* padding-top: .75rem; */
 }
 .main-section-error-info-label {
     color: #ef3845;
@@ -387,18 +390,17 @@ ul.page-numbers{
 
 .player-card,
 .team-card {
-    background-color: white;
+    background-color: #ffffffa3;
     margin-right: 1rem;
-    margin-bottom: 1rem;
     padding-bottom: .5rem;
-    border-bottom-left-radius: 5px;
-    border-bottom-right-radius: 5px;
+    border-radius: 5px;
     cursor: pointer;
     height: 10rem;
     width: 10rem;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: top;
+    text-align: left;
 }
 
 .player-card-img,
@@ -407,32 +409,42 @@ ul.page-numbers{
     height: 3rem;
     /* the line ensures that the image does loose its aspect ratio since we've set both a width and height on the image */
     object-fit: cover; 
-    border-bottom-left-radius: 7px;
-    border-bottom-right-radius: 7px;
+    border-radius: 7px;
 }
 
 /* targets the header/name in the player card */
 .player-card h4,
 .team-card h4 {
-    margin-top: 0;
+    margin-top: 5px;
     margin-bottom: 0;
+    margin-left: 15px;
+    font-size: 1.1rem;
 }
 /* And this targets the rest of the text in the player card */
 .player-card p,
 .team-card p {
     margin: 5px 15px;
+    margin-bottom: 0;
     font-size: 15px;
     font-weight: 300;
 }
+.player-card p:nth-of-type(1),
+.team-card p:nth-of-type(1) {
+    margin-top: .7rem;
+    font-size: 14px;
+}
 .player-card p:nth-of-type(2),
 .team-card p:nth-of-type(2) {
-    font-style: italic;
-    font-size: 13px;
+    margin-top: .7rem;
+    font-size: 15px;
     font-weight: 500;
+    line-height: .9rem;
 }
 .player-card p:nth-of-type(3),
 .team-card p:nth-of-type(3) {
-    font-size: 10px;
+    margin-top: -0.1rem;
+    font-weight: 300;
+    font-size: 13px;
 }
 
 .players-page footer, .teams-page footer{
@@ -873,7 +885,8 @@ select.create-team-card-input {
     margin-top: 5rem;
 }
 .invitation{
-    background-color: #bfbfbf;
+    box-shadow: inset 0 0 3px 0 #00000021;
+    background-color: #ebe9e9;
     text-align: left;
     padding: 1rem 1.25rem;
     margin-top: 2rem;
