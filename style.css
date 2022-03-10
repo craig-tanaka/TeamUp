@@ -49,6 +49,7 @@ nav{
     display: flex;
     justify-content: space-between;
     align-items: center;
+    backdrop-filter: blur(10px);
 }
 .site-logo{
     width: 7rem;
@@ -369,7 +370,8 @@ ul.page-numbers{
     margin-left: 1rem;
 }
 
-.player-card{
+.player-card,
+.team-card {
     background-color: white;
     margin-right: 1rem;
     margin-bottom: 1rem;
@@ -384,7 +386,8 @@ ul.page-numbers{
     justify-content: space-between;
 }
 
-.player-card-img{
+.player-card-img,
+.team-card-img {
     width: 100%;
     height: 3rem;
     /* the line ensures that the image does loose its aspect ratio since we've set both a width and height on the image */
@@ -394,22 +397,26 @@ ul.page-numbers{
 }
 
 /* targets the header/name in the player card */
-.player-card h4{
+.player-card h4,
+.team-card h4 {
     margin-top: 0;
     margin-bottom: 0;
 }
 /* And this targets the rest of the text in the player card */
-.player-card p{
+.player-card p,
+.team-card p {
     margin: 5px 15px;
     font-size: 15px;
     font-weight: 300;
 }
-.player-card p:nth-of-type(2) {
+.player-card p:nth-of-type(2),
+.team-card p:nth-of-type(2) {
     font-style: italic;
     font-size: 13px;
     font-weight: 500;
 }
-.player-card p:nth-of-type(3) {
+.player-card p:nth-of-type(3),
+.team-card p:nth-of-type(3) {
     font-size: 10px;
 }
 
@@ -446,6 +453,7 @@ ul.page-numbers{
 .forums-page footer,
 .view-forum-page  footer,
 .player-profile-page footer,
+.teams-profile-page footer,
 .login-page footer,
 .invitations-page footer,
 .index-page footer,
@@ -572,47 +580,61 @@ ul.page-numbers{
 /* _____________ View-forum Page Styling*/
 
 /* _____________ Player-Profile Page Styling*/
-.player-profile-page{
+.player-profile-page,
+.team-profile-page {
     text-align: left;
 }
-.player-profile-page nav{
+.player-profile-page nav,
+.team-profile-page nav {
     box-shadow: 5px 0 25px 0 #010f1e29;
 }
-.player-profile-page nav{
+.player-profile-page nav,
+.team-profile-page nav {
     position: static;
 }
 
-.player-main-details{
+.player-main-details,
+.team-main-details {
     margin-top: 4rem;
     margin-left: 15rem;
 }
 .player-profile-page .player-name,
 .player-profile-page .player-game,
-.player-profile-page .player-platform{
+.player-profile-page .player-platform,
+.team-profile-page .player-name,
+.team-profile-page .team-game,
+.team-profile-page .team-platform {
     margin: 0;
 }
 .player-profile-page .player-game,
-.player-profile-page .player-platform{
+.player-profile-page .player-platform,
+.team-profile-page .team-game,
+.team-profile-page .team-platform {
     color: #ef3845;
 }
-.player-page--main-main{
+.player-page--main-main,
+.team-page--main-main {
     display: flex;
     margin-left: 22rem;
 }
-.other-player-details {
+.other-player-details,
+.other-team-details {
     margin-right: 1rem;
 }
-.player-profile-page .player-profile-picture{
+.player-profile-page .player-profile-picture,
+.team-profile-page .team-profile-picture {
     width: 5rem;
     height: 5rem;
     object-fit: cover;
     object-position: center;
     margin-right: 2rem;
 }
-.player-profile-page .detail-header{
+.player-profile-page .detail-header,
+.team-profile-page .detail-header {
     margin-bottom: 0;
 }
-.player-profile-page .detail-text{
+.player-profile-page .detail-text,
+.team-profile-page .detail-text {
     margin-bottom: 2rem;
     margin-top: .5rem;
 }

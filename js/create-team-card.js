@@ -44,7 +44,7 @@ document.querySelector('.create-team-card-profile-placeholder').addEventListener
 })
 
 // creating variables to hold team card info
-let profilePicture, gameName, teamAbout, teamDescription, gameType, skillLevel;
+let profilePicture, gamePlatform, gameName, teamAbout, teamDescription, gameType, skillLevel;
 
 // function to update team card variables when user click submits before submitting to database function 
 function createTeamCardDocument() { 
@@ -54,14 +54,17 @@ function createTeamCardDocument() {
         teamAbout: teamAbout,
         teamDescription: teamDescription,
         gameType: gameType,
-        skillLevel: skillLevel
+        skillLevel: skillLevel,
+        playerName: userDoc.userName,
+        playerFirstName: userDoc.userFirstName,
+        gamePlatform: gamePlatform
     })
     .then((docRef) => {
         // console.log("Document written");
         if (document.querySelector('#team-card-profile-picture-input').files.length != 0) {
             uploadProfilePicture();
         } else {
-            window.location = './teams.html';
+            updateUserDocument();
         }
     })
     .catch((error) => {
@@ -75,6 +78,7 @@ function fillVariables() {
     teamAbout = document.querySelector('#team-card-about-input').value;
     teamDescription = document.querySelector('#team-card-description-input').value;
     gameType = document.querySelector('#team-card-game-type-input').value;
+    gamePlatform = document.querySelector('#team-platform-input').value;
     skillLevel = document.querySelector('#team-card-skill-level-input').value;
 }
 
@@ -85,7 +89,7 @@ function uploadProfilePicture() {
 
     picRef.put(profilePicture).then((snapshot) => {
         // console.log('Uploaded a blob or file!');
-        window.location = './teams.html';
+        updateUserDocument();
     });
 }
 
@@ -99,7 +103,7 @@ function updateUserDocument() {
         "playerHasTeamCard": true
     }).then(() => { 
         // console.log("Document successfully updated!");
-        window.location = './player-profile.html?u=' + firebase.auth().currentUser.uid;
+        window.location = './team-profile.html?u=' + firebase.auth().currentUser.uid;
 
     })
 }
@@ -109,21 +113,24 @@ firebase.auth().onAuthStateChanged(function(userCredential) {
     if (userCredential) {
         // fill user fields
         db.collection("teamCards").doc(userCredential.uid).get()
-        .then(doc => { 
-            document.querySelector('#team-card-game-name-input').value = doc.data().gameName;
-            document.querySelector('#team-card-about-input').value = doc.data().teamAbout;
-            document.querySelector('#team-card-description-input').value = doc.data().teamDescription;
-            document.querySelector('#team-card-skill-level-input').value = doc.data().skillLevel;
+            .then(doc => { 
+                if (doc.data() == undefined) return;
+                document.querySelector('#team-card-game-name-input').value = doc.data().gameName;
+                document.querySelector('#team-card-about-input').value = doc.data().teamAbout;
+                document.querySelector('#team-card-description-input').value = doc.data().teamDescription;
+                document.querySelector('#team-card-skill-level-input').value = doc.data().skillLevel;
+                document.querySelector('#team-card-game-type-input').value = doc.data().gameType;
+                document.querySelector('#team-platform-input').value = doc.data().gamePlatform;
 
-            document.querySelector('.page-header').innerHTML = 'Update Team Card';
-        })
-        storageReference.child(`/teamCardPics/${userCredential.uid}/profile-picture.jpg`).getDownloadURL()
-        .then((url) => {
-            var img = document.querySelector('.create-team-card-profile-placeholder');
-            img.setAttribute('src', url);
-            userHasOnlinePic = true;
-            document.querySelector('.page-header').innerHTML = 'Update Team Card';
-        })
+                document.querySelector('.page-header').innerHTML = 'Update Team Card'; 
+                storageReference.child(`/teamCardPics/${userCredential.uid}/profile-picture.jpg`).getDownloadURL()
+                .then((url) => {
+                    var img = document.querySelector('.create-team-card-profile-placeholder');
+                    img.setAttribute('src', url);
+                    userHasOnlinePic = true;
+                    document.querySelector('.page-header').innerHTML = 'Update Team Card';
+                })
+            })
     }
 });
 let userHasOnlinePic;
