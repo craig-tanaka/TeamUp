@@ -28,7 +28,9 @@ db.collection('forums').where('forumType', '==', forumsType).get()
     })
 
 
-
+document.querySelector('.forums-topic-back-btn-row').addEventListener('click', () => { 
+    window.location = './forums.html'
+})
 
 
 

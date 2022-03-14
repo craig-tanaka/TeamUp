@@ -476,6 +476,10 @@ ul.page-numbers{
     cursor: pointer;
     border-radius: 7px;
 }
+.forums-topic-back-btn-row {
+    display: flex;
+    justify-content: right;
+}
 
 .forums-page footer,
 .forums-topic-page footer,
