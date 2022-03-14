@@ -11,6 +11,14 @@ const cardDescription= document.querySelector('.card-description');
 const urlParameter = new URLSearchParams(window.location.search);
 const requestedPlayerUid = urlParameter.get('u');
 
+
+// hides leave a message button if the profile to be shown is the user's
+firebase.auth().onAuthStateChanged(() => {
+    if (firebase.auth().currentUser.uid !== requestedPlayerUid) {
+        document.querySelector('#leave-a-message-btn').style.display = 'block';
+    }
+});
+
 // Gets the player card data from databse using the uid
 db.collection("users").doc(requestedPlayerUid).get()
     .then(doc => { 

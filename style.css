@@ -680,6 +680,7 @@ ul.page-numbers{
     color: white;
     border: none;
     border-radius: 10px;
+    display: none;
 }
 .message-window {
     position: absolute;
