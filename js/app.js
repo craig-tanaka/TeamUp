@@ -75,7 +75,7 @@ function getUserProfile() {
         document.querySelector('.nav-link.welcome').innerHTML = `Welcome ${doc.data().userFirstName}`;
         if (userDoc.playerHasCard) {
             document.querySelector('.user-nav-links-container > .player-card-nav-link').innerHTML = 'Your Card';
-            document.querySelector('.user-nav-links-container > .player-card-nav-link').href = './player-profile.html?u=' + firebase.auth().currentUser.uid;
+            // document.querySelector('.user-nav-links-container > .player-card-nav-link').href = './player-profile.html?u=' + firebase.auth().currentUser.uid;
 
         }
         if (userDoc.playerHasTeamCard) {

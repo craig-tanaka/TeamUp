@@ -30,7 +30,7 @@ function validateForm(){
     if (!hasNoErrors) errorLabel.innerHTML = 'Please Fill in Missing Labels!!!!!';
 
     // check if user has selected profile picture
-    if (document.querySelector('#player-card-profile-picture-input').files.length == 0) {
+    if (document.querySelector('#player-card-profile-picture-input').files.length == 0 && !userHasOnlinePic) {
         hasNoErrors = false;
         errorLabel.innerHTML = 'No Profile Picture Selected';
     }
@@ -61,7 +61,11 @@ function createplayerCardDocument() {
     })
     .then((docRef) => {
         // console.log("Document written");
-        uploadProfilePicture();
+        if (document.querySelector('#player-card-profile-picture-input').files.length != 0) {
+            uploadProfilePicture();
+        } else { 
+            updateUserDocument();
+        }
     })
     .catch((error) => {
         console.error("Error adding image: ", error);
@@ -106,3 +110,30 @@ function updateUserDocument() {
 
     })
 }
+
+
+// Check if user already has a player card, if user does it populates the page inputs with current player card data
+firebase.auth().onAuthStateChanged(function(userCredential) {
+    if (userCredential) {
+        // fill user fields
+        db.collection("playerCards").doc(userCredential.uid).get()
+            .then(doc => { 
+                if (doc.data() == undefined) return;
+                document.querySelector('#player-card-game-name-input').value = doc.data().gameName;
+                document.querySelector('#player-card-about-input').value = doc.data().playerAbout;
+                document.querySelector('#player-card-description-input').value = doc.data().playerDescription;
+                document.querySelector('#player-card-skill-level-input').value = doc.data().skillLevel;
+                document.querySelector('#player-card-game-type-input').value = doc.data().gameType;
+                document.querySelector('#player-platform-input').value = doc.data().playerPlatform;
+
+                document.querySelector('.page-header').innerHTML = 'Update Player Card'; 
+                storageReference.child(`/playerCardPics/${userCredential.uid}/profile-picture.jpg`).getDownloadURL()
+                .then((url) => {
+                    var img = document.querySelector('.create-player-card-profile-placeholder');
+                    img.setAttribute('src', url);
+                    userHasOnlinePic = true;
+                })
+            })
+    }
+});
+let userHasOnlinePic;
