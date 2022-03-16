@@ -12,7 +12,7 @@ const urlParameter = new URLSearchParams(window.location.search);
 const requestedPlayerUid = urlParameter.get('u');
 
 
-// hides leave a message button if the profile to be shown is the user's
+// Shows leave a message button if the profile to be shown is the user's
 firebase.auth().onAuthStateChanged(() => {
     if (firebase.auth().currentUser.uid !== requestedPlayerUid) {
         document.querySelector('#leave-a-message-btn').style.display = 'block';
